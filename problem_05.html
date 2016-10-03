@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		// 5. Write function that translates a text to Pig Latin and back. English is translated to Pig Latin by taking the first letter of every word, moving it to the end of the word and adding "ay".
+
+		// "The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+
+		// (source: https://adriann.github.io/programming_problems.html)
+
+		// take position 0 of array, pop it off
+		// create new array with rest of word (sliced or spliced), add popped off letter and add "ay"
+
+
+		var user_entry = prompt("What do you want to translate into Pig Latin?");
+		
+		var i, j;
+	
+
+		// function toPL(string) {
+
+			var user_arr = user_entry.split(" ");
+			var word_split = [];
+
+			for (i = 0; i < user_arr.length; i++) {
+				word_split[i] = user_arr[i].split("");
+			}
+
+			var PL = [];
+			var firstChar = "";
+
+			for (j = 0; j < user_arr.length; j++) {
+
+				firstChar = word_split[j][0];
+				word_split[j].shift();
+				word_split[j].push(firstChar);
+				word_split[j].push("a");
+				word_split[j].push("y");
+				word_split[j] = word_split[j].join("");
+				
+			}
+
+			console.log(user_arr);
+			console.log(word_split);
+			console.log(word_split.join(" "));
+			console.log(user_entry);
+
+
+			
+			// for (k = 0; k < user_arr.length; k++) {
+			// 	word_split[i] = user_arr[i].split("");
+			// }	
+
+
+			// for (k = 0; k < user_arr.length; k++) {
+			// 	word_split[k].pop();
+			// 	word_split[k].pop();
+			// 	// word_split[k].shift();
+			// 	console.log(word_split);
+
+
+			// }
+		
+
+
+		// toPL(string);
+
+	</script>
+</body>
+</html>

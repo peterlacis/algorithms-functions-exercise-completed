@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.
+
+		// -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+		// -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
+
+		function qwerty() {
+
+		var arr = []
+		
+		while(arr.length < 10) {
+		  var random = Math.floor(Math.random() * 100);
+		  var found=false;
+		  for(var i=0; i < arr.length; i++) {
+			if (arr[i] === random)
+				{found = true; break}
+		  	}
+		  if (!found)
+		  	arr[arr.length] = random;
+		}
+		console.log(arr);
+		return arr;
+	}
+
+	qwerty();
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		// 4. Write a function which takes an array of integers and returns an array with any duplicate integers removed.
+		// [1,1,2,3,1,2,3] -> [1,2,3]
+		// [1,4,4,4,2,2,4,4,4] -> [1,4,2]
+
+		// use pop to remove duplicates
+		// if an arry value has already appeared, pop the extra (only once)
+		//use "Counts" array concept like in #1 to see how many of each integer exists in array
+		// second loop will check "Counts" array to see what integers exist and create new array with one of each of these integers
+
+		function finddupes(arr) {
+			
+			var counts = [];
+			var i, j;
+			var dupecount = 1;
+			var newarr = [];
+
+			for (i = 0; i < arr.length; i++) {
+				if (counts[arr[i]] === undefined) {
+					counts[arr[i]] = 0;
+				}
+				counts[arr[i]] = counts[arr[i]] +1;
+				// console.log(counts[arr[i]]);
+			}
+			
+
+			for (j = 0; j < counts.length; j++) {
+				if (counts[j] >= 1) {
+					newarr.push(j);
+				}
+			}
+
+			return newarr;
+
+		}
+
+
+		var arr = [1, 1, 2, 3, 1, 2, 3];
+		// var arr = [1, 4, 4, 4, 2, 2, 4, 4, 4];
+
+		finddupes(arr);
+
+
+	</script>
+</body>
+</html>
